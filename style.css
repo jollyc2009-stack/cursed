@@ -1,0 +1,157 @@
+/* Page fade-in */
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Fade-out */
+.fade-out {
+    opacity: 0;
+}
+
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+    text-align: center;
+    animation: zoomIn 0.25s ease;
+}
+
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    cursor: zoom-out;
+}
+
+#lightbox-caption {
+    color: white;
+    margin-top: 15px;
+    font-size: 2.5vh;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+#lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    cursor: zoom-out;
+}
+
+
+body, html {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.container {
+  height: 100vh;    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;  
+}
+
+.title {
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 3px white;
+    font-size: 65vh;
+}
+
+.gallery-button {
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 1vh;
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+.gallery-button:hover {
+    transition: ease-in 0.2s;
+    background-color: white;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.title2 {
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    font-size: 6vh;
+}
+
+.title3 {
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    font-size: 2vh;
+}
+
+.gallerydiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 35px;
+    padding: 20px;
+}
+
+.item {
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-color: white;
+    border-radius: 8px;
+}
+
+.item p {
+    color: white;
+    font-size: 2vh;
+}
